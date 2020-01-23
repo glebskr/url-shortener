@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 const auth = require('./routes/auth')
 const link = require('./routes/link')
+const redirect = require('./routes/redirect')
 
 
 const app = express();
@@ -13,6 +14,8 @@ const PORT = config.get('port') || 3000
 
 app.use('/api/auth', auth)
 app.use('/api/link', link)
+app.use('/t', redirect)
+
 
 async function start() {
     try {

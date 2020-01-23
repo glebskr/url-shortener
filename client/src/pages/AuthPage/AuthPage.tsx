@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { useFetch } from "./../../hooks/fetchHook";
 import { useMessage } from "./../../hooks/messageHook";
 import { AuthContext } from "./../../context/authContext";
-export const AuthPage = () => {
 
+export const AuthPage: React.FC = () => {
   const auth = useContext(AuthContext);
   const message = useMessage();
   const { loading, error, request, clearError } = useFetch();
@@ -50,6 +50,7 @@ export const AuthPage = () => {
                   onChange={changeHandler}
                   name="email"
                   className="validate yellow-input"
+                  value={email}
                 />
               </div>
               <div className="input-field ">
@@ -60,6 +61,7 @@ export const AuthPage = () => {
                   onChange={changeHandler}
                   name="password"
                   className=" validate yellow-input"
+                  value={password}
                 />
               </div>
             </div>

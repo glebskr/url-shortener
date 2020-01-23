@@ -5,6 +5,10 @@ import { CreatePage} from "./../pages/CreatePage/CreatePage";
 import {DetailPage} from "./../pages/DetailPage/DetailPage";
 import {AuthPage} from "./../pages/AuthPage/AuthPage";
 
+interface useRoutes {
+  isAuthenticated: boolean;
+}
+
 export const useRoutes = (isAuthenticated: boolean) => {
   if (isAuthenticated) {
     return (
